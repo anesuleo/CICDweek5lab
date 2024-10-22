@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 @Service
 public class ProductService {
     private List<Product> myList = new ArrayList<>();
@@ -13,5 +15,16 @@ public class ProductService {
         myList.add(product);
         return myList;
     }
+    public List<Product> updateProduct(Product product, int id)
+    {
+        for (Product p : myList) {
+            if (Objects.equals(p.getId(), id)) {
+                p.setName(product.getName());
+                p.setPrice(product.getPrice());
+            }
+        }
+        return myList;
+    }
+
 
 }
