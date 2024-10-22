@@ -25,4 +25,11 @@ public class ProductController {
         return list;
     }
 
+    @PutMapping("{id}")
+    public List<Product> updateProduct(@PathVariable int id, @RequestBody Product product)
+    {
+        list = myService.updateProduct(product, id);
+        return list;
+    }
+
 }
