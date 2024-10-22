@@ -9,6 +9,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
+
     private ProductService myService;
 
     public ProductController(ProductService myService) {
@@ -31,5 +32,13 @@ public class ProductController {
         list = myService.updateProduct(product, id);
         return list;
     }
+
+    @DeleteMapping("{id}")
+    public List<Product> updateProduct(@PathVariable int id, @RequestBody Product product)
+    {
+
+    }
+
+
 
 }
