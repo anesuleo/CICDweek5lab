@@ -1,5 +1,6 @@
 package ie.atu.week5lab;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class ProductController {
     private List<Product> list = new ArrayList<>();
     //Creating a class which is interested in requests and responses. Separation of Concern
     @PostMapping
-    public List<Product> newProduct(@RequestBody Product product)
+    public List<Product> newProduct(@Valid @RequestBody Product product)
     {
         //Send it to business logic
         list = myService.addProduct(product);
