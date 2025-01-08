@@ -27,7 +27,7 @@ public class ProductService {
         return myList;
     }
 
-    public List<Product> deleteProduct(Product product, int id)
+    public List<Product> deleteProduct(int id)
     {
         for (Product p : myList){
             if(Objects.equals(p.getId(), id)){
